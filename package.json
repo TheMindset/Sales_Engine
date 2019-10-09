@@ -1,4 +1,6 @@
 {
+  "name": "Sales_Engine",
+  "private": true,
   "dependencies": {
     "husky": "^3.0.8"
   },
