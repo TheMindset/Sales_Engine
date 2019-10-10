@@ -12,5 +12,6 @@
 
 FactoryBot.define do
   factory :merchant do
+    name { 'Hola' }
   end
 end
