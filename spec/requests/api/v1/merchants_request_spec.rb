@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'pry'
 
 RSpec.describe 'Merchants API', type: :request do
   it "sends a list of merchants" do
@@ -10,8 +11,7 @@ RSpec.describe 'Merchants API', type: :request do
     expect(response).to be_successful
 
     merchant = JSON.parse(response.body)
-
-    expect(merchant.count).to eq(3)
+    expect(merchant["data"].count).to eq(3)
   end
 
   it "can get one merchant by its id" do
@@ -20,9 +20,8 @@ RSpec.describe 'Merchants API', type: :request do
     get "/api/v1/merchants/#{id}"
 
     merchant = JSON.parse(response.body)
-
     expect(response).to be_successful
 
-    expect(merchant["id"]).to eq(id)
+    expect(merchant["data"]["id"].to_i).to eq(id)
   end
 end
