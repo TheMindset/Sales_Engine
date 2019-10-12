@@ -165,6 +165,32 @@
         1,
         null
       ],
+      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/controllers/api/v1/invoices_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/serializers/invoice_serializer.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
       "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/serializers/item_serializer.rb": [
         null,
         null,
@@ -266,19 +292,8 @@
         null,
         null,
         null
-      ],
-      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/serializers/invoice_serializer.rb": [
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1570895523
+    "timestamp": 1570896018
   }
 }
