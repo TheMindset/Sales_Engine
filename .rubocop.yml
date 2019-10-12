@@ -21,6 +21,7 @@ Metrics/BlockLength:
     - 'spec/**/*.rb'
     - 'Guardfile'
     - 'vendor/bundle'
+    - 'lib/tasks/import_csv.rake'
 
 # Unpractical and not DRY
 RSpec/NamedSubject:

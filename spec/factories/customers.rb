@@ -2,15 +2,16 @@
 
 # == Schema Information
 #
-# Table name: merchants
+# Table name: customers
 #
 #  id         :bigint           not null, primary key
-#  name       :string
+#  first_name :string
+#  last_name  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Merchant < ApplicationRecord
-  has_many :items
-  has_many :invoices
+FactoryBot.define do
+  factory :customer do
+  end
 end

@@ -36,4 +36,7 @@ RSpec.describe 'Merchants API', type: :request do
 
     expect(merchant_items["data"].count).to eq(3)
   end
+
+  it "can get all invoices belongs to a merchant" do
+  end
 end
