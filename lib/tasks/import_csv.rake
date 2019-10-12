@@ -16,4 +16,16 @@ namespace :import_csv do
     Merchant.create(merchants)
     p "Merchants data imported"
   end
+
+  task items_data: :environment do
+    item_csv = "db/csv/items.csv"
+
+    items = []
+    CSV.foreach(item_csv, headers: true) do |row|
+      items << row.to_hash
+    end
+
+    Item.create(items)
+    p "Items data imported"
+  end
 end
