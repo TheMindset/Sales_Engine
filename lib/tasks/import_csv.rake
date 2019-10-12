@@ -64,4 +64,16 @@ namespace :import_csv do
     InvoiceItem.create(invoice_items)
     p "Invoice_items data imported"
   end
+
+  task transactions_data: :environment do
+    transaction_csv = "db/csv/transactions.csv"
+
+    transactions = []
+    CSV.foreach(transaction_csv, headers: true) do |row|
+      transactions << row.to_hash
+    end
+
+    Transaction.create(transactions)
+    p "Transactions data imported"
+  end
 end
