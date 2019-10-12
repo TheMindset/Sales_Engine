@@ -13,5 +13,13 @@
 require 'rails_helper'
 
 RSpec.describe Merchant, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has a valid factory" do
+    expect(build(:merchant)).to be_valid
+  end
+
+  describe "Associations" do
+    let(:merchant) { build(:merchant) }
+
+    it { is_expected.to have_many(:items) }
+  end
 end

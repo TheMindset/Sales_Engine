@@ -1,12 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/controllers/api/v1/merchants_controller.rb": [
+      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/controllers/api/v1/items_controller.rb": [
+        1,
+        1,
+        1,
         null,
-        null,
-        1,
-        1,
-        1,
         1,
         1,
         null,
@@ -24,6 +23,54 @@
         1,
         null
       ],
+      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/controllers/api/v1/merchants_controller.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/models/item.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/models/application_record.rb": [
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
       "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/models/merchant.rb": [
         null,
         null,
@@ -38,11 +85,11 @@
         null,
         null,
         1,
+        1,
         null
       ],
-      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/models/application_record.rb": [
-        null,
-        null,
+      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/serializers/item_serializer.rb": [
+        1,
         1,
         1,
         null
@@ -93,6 +140,6 @@
         null
       ]
     },
-    "timestamp": 1570785599
+    "timestamp": 1570862519
   }
 }

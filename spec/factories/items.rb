@@ -19,5 +19,9 @@
 
 FactoryBot.define do
   factory :item do
+    name { "Guigui" }
+    description { " The best items never see in the world" }
+    unit_price { 2457 }
+    merchant { FactoryBot.create(:merchant) }
   end
 end
