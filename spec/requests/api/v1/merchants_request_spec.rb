@@ -24,19 +24,4 @@ RSpec.describe 'Merchants API', type: :request do
 
     expect(merchant["data"]["id"].to_i).to eq(id)
   end
-
-  it "can get all items belongs to a merchant" do
-    id = create(:merchant).id
-    create_list(:item, 3, merchant_id: id)
-
-    get "/api/v1/merchants/#{id}/items"
-    expect(response).to be_successful
-
-    merchant_items = JSON.parse(response.body)
-
-    expect(merchant_items["data"].count).to eq(3)
-  end
-
-  it "can get all invoices belongs to a merchant" do
-  end
 end

@@ -13,5 +13,7 @@
 
 FactoryBot.define do
   factory :customer do
+    first_name { "Nzambé" }
+    last_name { "Nangaï" }
   end
 end

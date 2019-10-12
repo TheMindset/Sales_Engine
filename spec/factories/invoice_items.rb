@@ -20,5 +20,9 @@
 
 FactoryBot.define do
   factory :invoice_item do
+    quantity { 3 }
+    unit_price { 74_532 }
+    invoice { FactoryBot.create(:invoice) }
+    item { FactoryBot.create(:item) }
   end
 end
