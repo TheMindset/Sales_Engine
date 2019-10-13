@@ -21,4 +21,8 @@ class Item < ApplicationRecord
   belongs_to :merchant
   has_many :invoice_items
   has_many :invoices, through: :invoice_items
+
+  def self.items_by_invoice(invoice_id)
+    joins(:invoices).where(invoices: { id: invoice_id })
+  end
 end
