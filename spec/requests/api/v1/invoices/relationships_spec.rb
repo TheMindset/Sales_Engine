@@ -40,4 +40,15 @@ RSpec.describe 'Invoice relationships API', type: :request do
     items = JSON.parse(response.body)
     expect(items["data"].count).to eq(2)
   end
+
+  it "can get the customer belongs to an invoice" do
+    customer = create(:customer)
+    invoice1 = create(:invoice, customer_id: customer.id)
+
+    get "/api/v1/invoices/#{invoice1.id}/customers"
+
+    expect(response).to be_successful
+    customers = JSON.parse(response.body)
+    expect(customers["data"]["attributes"]["id"]).to eq(customer.id)
+  end
 end
