@@ -22,11 +22,13 @@ Rails.application.routes.draw do
           resources :transactions, only: [:index]
           resources :invoice_items, only: [:index]
           resources :items, only: [:index]
+          resources :customers, only: [:index]
         end
       end
 
       resources :transactions, only: [:index, :show]
       resources :invoice_items, only: [:index, :show]
+      resources :customers, only: [:index, :show]
     end
   end
 end

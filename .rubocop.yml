@@ -22,6 +22,7 @@ Metrics/BlockLength:
     - 'Guardfile'
     - 'vendor/bundle'
     - 'lib/tasks/import_csv.rake'
+    - 'config/routes.rb'
 
 # Unpractical and not DRY
 RSpec/NamedSubject:
