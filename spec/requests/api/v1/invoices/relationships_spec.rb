@@ -15,4 +15,16 @@ RSpec.describe 'Invoice relationships API', type: :request do
 
     expect(transactions["data"].count).to eq(3)
   end
+
+  it "can get all invoice_items belongs to an invoice" do
+    id = create(:invoice).id
+    create_list(:invoice_item, 3, invoice_id: id)
+
+    get "/api/v1/invoices/#{id}/invoice_items"
+    expect(response).to be_successful
+
+    invoice_items = JSON.parse(response.body)
+
+    expect(invoice_items["data"].count).to eq(3)
+  end
 end
