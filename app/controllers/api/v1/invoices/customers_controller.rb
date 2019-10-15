@@ -4,8 +4,8 @@ module Api
   module V1
     module Invoices
       class CustomersController < ApplicationController
-        def index
-          render json: CustomerSerializer.new(Invoice.find(params[:invoice_id]).customer)
+        def show
+          render json: CustomerSerializer.new(Customer.customer_by_invoice(params[:invoice_id]))
         end
       end
     end

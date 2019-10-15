@@ -14,7 +14,7 @@
 class Customer < ApplicationRecord
   has_many :invoices
 
-  def self.customers_by_invoice(invoice_id)
+  def self.customer_by_invoice(invoice_id)
     joins(:invoices).where(invoices: { id: invoice_id })
   end
 end
