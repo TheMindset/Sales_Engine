@@ -172,6 +172,10 @@
         1,
         1,
         1,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/models/transaction.rb": [
@@ -350,6 +354,41 @@
         null,
         null
       ],
+      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/controllers/api/v1/invoices/merchants_controller.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/serializers/merchant_serializer.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
       "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/controllers/api/v1/invoices_controller.rb": [
         null,
         null,
@@ -422,26 +461,6 @@
         null,
         null
       ],
-      "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/serializers/merchant_serializer.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null
-      ],
       "/home/gui-pc/Desktop/Ruby/Backend_Turing/Module_3/Project/Sales_Engine/app/controllers/api/v1/merchants/items_controller.rb": [
         null,
         null,
@@ -490,6 +509,6 @@
         null
       ]
     },
-    "timestamp": 1571114379
+    "timestamp": 1571115235
   }
 }

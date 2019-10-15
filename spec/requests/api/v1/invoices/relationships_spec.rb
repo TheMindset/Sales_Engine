@@ -11,9 +11,9 @@ RSpec.describe 'Invoice relationships API', type: :request do
     get "/api/v1/invoices/#{id}/transactions"
     expect(response).to be_successful
 
-    transactions = JSON.parse(response.body)
+    display = JSON.parse(response.body)
 
-    expect(transactions["data"].count).to eq(3)
+    expect(display["data"].count).to eq(3)
   end
 
   it "can get all invoice_items belongs to an invoice" do
@@ -23,9 +23,9 @@ RSpec.describe 'Invoice relationships API', type: :request do
     get "/api/v1/invoices/#{id}/invoice_items"
     expect(response).to be_successful
 
-    invoice_items = JSON.parse(response.body)
+    display = JSON.parse(response.body)
 
-    expect(invoice_items["data"].count).to eq(3)
+    expect(display["data"].count).to eq(3)
   end
 
   it "can get all items belongs to an invoice" do
@@ -37,8 +37,8 @@ RSpec.describe 'Invoice relationships API', type: :request do
     get "/api/v1/invoices/#{invoice.id}/items"
     expect(response).to be_successful
 
-    items = JSON.parse(response.body)
-    expect(items["data"].count).to eq(2)
+    display = JSON.parse(response.body)
+    expect(display["data"].count).to eq(2)
   end
 
   it "can get the customer belongs to an invoice" do
@@ -48,7 +48,18 @@ RSpec.describe 'Invoice relationships API', type: :request do
     get "/api/v1/invoices/#{invoice1.id}/customer"
 
     expect(response).to be_successful
-    customers = JSON.parse(response.body)
-    expect(customers["data"][0]["attributes"]["id"]).to eq(customer.id)
+    display = JSON.parse(response.body)
+    expect(display["data"][0]["attributes"]["id"]).to eq(customer.id)
+  end
+
+  it "can get the merchant belongs to an invoice" do
+    merchant = create(:merchant)
+    invoice1 = create(:invoice, merchant_id: merchant.id)
+
+    get "/api/v1/invoices/#{invoice1.id}/merchant"
+
+    expect(response).to be_successful
+    display = JSON.parse(response.body)
+    expect(display["data"][0]["attributes"]["id"]).to eq(merchant.id)
   end
 end
