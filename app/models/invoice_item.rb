@@ -21,4 +21,8 @@
 class InvoiceItem < ApplicationRecord
   belongs_to :invoice
   belongs_to :item
+
+  def self.find_all_invoices_for_item(item_id)
+    joins(:item).where(items: { id: item_id })
+  end
 end

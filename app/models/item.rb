@@ -25,4 +25,8 @@ class Item < ApplicationRecord
   def self.items_by_invoice(invoice_id)
     joins(:invoices).where(invoices: { id: invoice_id })
   end
+
+  def self.merchant_for_item(item_id)
+    joins(:merchant).where(items: { id: item_id })[0].merchant
+  end
 end
