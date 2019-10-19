@@ -25,4 +25,8 @@ class Invoice < ApplicationRecord
   has_many :items, through: :invoice_items
 
   enum status: ["shipped", "pending"]
+
+  def self.get_invoice_of_transaction(transaction_id)
+    joins(:transactions).where(transactions: { id: transaction_id })
+  end
 end
