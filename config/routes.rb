@@ -46,7 +46,11 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :customers, only: [:index, :show]
+      resources :customers, only: [:index, :show] do
+        scope module: :customers do
+          resources :invoices, only: [:index, :show]
+        end
+      end
     end
   end
 end

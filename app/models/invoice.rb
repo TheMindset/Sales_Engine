@@ -29,4 +29,8 @@ class Invoice < ApplicationRecord
   def self.get_invoice_of_transaction(transaction_id)
     joins(:transactions).where(transactions: { id: transaction_id })
   end
+
+  def self.get_all_invoices_fo_customer(customer_id)
+    joins(:customer).where(customers: { id: customer_id })
+  end
 end
