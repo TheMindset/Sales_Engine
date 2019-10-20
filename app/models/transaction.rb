@@ -21,4 +21,10 @@ class Transaction < ApplicationRecord
   belongs_to :invoice
 
   enum result: ["success", "failed"]
+
+  def self.get_all_transactions_for_customer(customer_id)
+    joins(:invoice).where(invoices: { customer_id: customer_id })
+  end
+
+
 end
