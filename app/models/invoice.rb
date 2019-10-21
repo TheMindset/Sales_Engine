@@ -24,7 +24,7 @@ class Invoice < ApplicationRecord
   has_many :invoice_items
   has_many :items, through: :invoice_items
 
-  enum status: ["shipped", "pending"]
+  scope :select_date, ->(date) { where(created_at: date) }
 
   def self.get_invoice_of_transaction(transaction_id)
     joins(:transactions).where(transactions: { id: transaction_id })
