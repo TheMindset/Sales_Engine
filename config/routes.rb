@@ -18,6 +18,11 @@ Rails.application.routes.draw do
         end
       end
 
+      namespace :items do
+        get 'most_revenue', to: 'most_revenue#index'
+        get '/:id/best_day', to: 'item_sales#show'
+      end
+
       resources :items, only: [:index, :show] do
         scope module: :items do
           resources :invoice_items, only: [:index]

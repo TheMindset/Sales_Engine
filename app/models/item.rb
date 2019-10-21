@@ -29,4 +29,22 @@ class Item < ApplicationRecord
   def self.merchant_for_item(item_id)
     joins(:merchant).where(items: { id: item_id })[0].merchant
   end
+
+  def self.most_revenue(quantity)
+    joins(:invoice_items).select("items.*, SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue")
+                         .group(:id)
+                         .order("revenue DESC")
+                         .limit(quantity)
+  end
+
+  def self.date_of_highset_sales(item_id)
+    joins(:invoices)
+      .where(items: { id: item_id })
+      .select('items.id, items.name, sum(invoice_items.quantity) AS revenue, invoices.created_at::date AS best_day')
+      .group(:best_day)
+      .group(:id)
+      .order("best_day ASC")
+      .order("revenue ASC")
+      .limit(1)
+  end
 end
