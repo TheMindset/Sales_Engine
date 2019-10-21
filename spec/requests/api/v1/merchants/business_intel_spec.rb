@@ -15,7 +15,7 @@ RSpec.describe 'business intelligence', type: :request do
   let!(:invoice4) { create(:invoice, merchant_id: merchant3.id) }
   let!(:invoice5) { create(:invoice, merchant_id: merchant4.id, created_at: "2012-03-25 09:54:09 UTC") }
 
-  let!(:invoice_items1) { create(:invoice_item, invoice_id: invoice1.id) }
+  let!(:invoice_items1) { create(:invoice_item, invoice_id: invoice1.id, quantity: 15) }
   let!(:invoice_items2) { create(:invoice_item, invoice_id: invoice3.id) }
   let!(:invoice_items3) { create(:invoice_item, invoice_id: invoice2.id) }
   let!(:invoice_items4) { create(:invoice_item, invoice_id: invoice4.id) }
