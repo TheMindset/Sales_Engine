@@ -19,9 +19,9 @@
 
 FactoryBot.define do
   factory :item do
-    name { "Guigui" }
+    name { Faker::Commerce.product_name }
     description { " The best items never see in the world" }
-    unit_price { 2457 }
+    unit_price { rand(1000..2457) }
     merchant { FactoryBot.create(:merchant) }
   end
 end

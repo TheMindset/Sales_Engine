@@ -33,4 +33,13 @@ class Invoice < ApplicationRecord
   def self.get_all_invoices_fo_customer(customer_id)
     joins(:customer).where(customers: { id: customer_id })
   end
+
+  # def self.most_revenue(limit = 5, sorting = "DESC")
+  #   select("invoices.*, SUM(invoice_items.unit_price * invoice_items.quantity) AS revenue")
+  #   .joins(:invoice_items, :transactions)
+  #   .merge(Transiction.successful) # scope in Transaction model
+  #   .group(:id)
+  #   .order("revenue #{sorting}")
+  #   .limit(limit)
+  # end
 end
