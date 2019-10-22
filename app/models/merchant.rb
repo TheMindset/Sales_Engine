@@ -36,4 +36,29 @@ class Merchant < ApplicationRecord
       .group(:id)
       .order("revenue DESC")
   end
+
+  def self.get_the_favorite_merchant(customer_id)
+    joins(:customers, invoices: :transactions)
+      .where(invoices: { customer_id: customer_id })
+      .merge(Transaction.successful)
+      .select("merchants.*, COUNT(transactions.result) AS total_transaction")
+      .group("merchants.id")
+      .order("total_transaction DESC")
+      .limit(1)
+  end
+
+  def self.customers_with_pending_invoices(merchant_id)
+    pending = Customer.joins(invoices: :transactions)
+                      .where(invoices: { merchant_id: merchant_id })
+                      .having("sum(transactions.result) = 1")
+                      .group(['customers.id, invoices.id'])
+                      .pluck(:id)
+
+    empty = Customer.left_outer_joins(invoices: :transactions)
+                    .where(invoices: { merchant_id: merchant_id })
+                    .where(transactions: { id: nil })
+                    .pluck(:id)
+
+    Customer.where(id: pending + empty)
+  end
 end

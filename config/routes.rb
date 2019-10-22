@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         get 'find', to: 'find#show'
         get 'most_revenue', to: 'most_revenue#index'
         get 'revenue', to: 'revenue#index'
+        get ":id/customers_with_pending_invoices", to: 'pending_invoices#show'
       end
 
       resources :merchants, only: [:index, :show] do
@@ -51,6 +52,10 @@ Rails.application.routes.draw do
           resource :invoice, only: [:show]
           resource :item, only: [:show]
         end
+      end
+
+      namespace :customers do
+        get '/:id/favorite_merchant', to: 'favorite_merchant#show'
       end
 
       resources :customers, only: [:index, :show] do
